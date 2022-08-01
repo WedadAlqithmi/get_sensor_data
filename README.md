@@ -82,7 +82,7 @@ void setup() {
   Serial2.begin(9600, SERIAL_8N1, RXp2, TXp2);
 }
 void loop() {
-    Serial.println("Message Received: ");
+    Serial.println("Message Received  to esp32  ");
     Serial.println(Serial2.readString());
 }
 ``` 
@@ -96,7 +96,7 @@ void setup() {
   Serial.begin(9600);
 }
 void loop() {
-  Serial.println("Hello Boss");
+  Serial.println(" this uno ");
   delay(1500);
 }
 ```
