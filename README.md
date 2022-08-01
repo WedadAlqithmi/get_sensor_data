@@ -1,6 +1,6 @@
 # get_sensor_data
 
-- connect ESP32 to Wi-Fi (done)
+- connect ESP32 to Wi-Fi (done) 
 
 ```
 
@@ -66,5 +66,9 @@ if($conn->query($sql) === TRUE){
 ``` 
 
 - create a databas in mysql (not yet)
+
+- connect esp32 to uno arduino 
+https://www.programmingboss.com/2021/04/esp32-arduino-serial-communication-with-code.html 
+
 
 - write the code that read vlaues from the esp32 to 
