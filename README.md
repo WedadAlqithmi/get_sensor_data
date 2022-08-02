@@ -37,10 +37,10 @@ void setup() {
 <?php
 $data = $_GET["d"];
 // declare some variables 
-$servername = "";
+$servername = "localhost";
 $username = "";
 $password = "";
-$dbname="";
+$dbname="sensor_data";
 
 // Create conncetion 
 $conn = new mysql($servername, $username, $password, $dbname);
