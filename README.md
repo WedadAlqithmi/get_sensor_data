@@ -37,8 +37,8 @@ void setup() {
 <?php
 $data = $_GET["d"];
 // declare some variables 
-$servername = "";
-$username = "";
+$servername = "localhost";
+$username = "root";
 $password = "";
 $dbname="";
 
