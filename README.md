@@ -152,3 +152,50 @@ php serial
 </body>
 </html>
 ```
+
+
+
+
+new php
+
+```
+<?php
+ //calling php serial class 
+    require_once 'php_serial.class.php';
+    $serial=new phpSerial();
+    $serial->deviceSet('/dev/ttyACM2');
+    $serial->confBaudRate(9600);
+    $serial->confParity("none");
+    $serial->confCharacterLength(8);
+    $serial->confStopBits(1);
+    $serial->confFlowControl("none");
+    $serial->deviceOpen();
+
+$data = $_GET["d"]; //GET command here will take the data from arduino 
+// declare some variables 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname="sensor_data";
+
+// Create conncetion 
+$conn = new mysql($servername, $username, $password, $dbname);
+
+// Check connection 
+if ($conn=>connect_error){
+	die("Connection failed: ".$conn->connect_error);
+	}
+$sql = "INSERT INTO sensor_data (id, data) //inser command here will write into the data base 
+VALUES('','$data')";
+
+if($conn->query($sql) === TRUE){
+// echo print some text 
+	echo "New record created successfully";
+	} else{
+	echo "Error: ".$sql."<br>".$conn->error;
+	}
+	$conn-.close();
+	
+
+?>
+```
