@@ -35,7 +35,7 @@ void setup() {
 
 ```
 <?php
-$data = $_GET["d"];
+$data = $_GET["d"]; //GET command here will take the data from arduino 
 // declare some variables 
 $servername = "localhost";
 $username = "";
@@ -49,7 +49,7 @@ $conn = new mysql($servername, $username, $password, $dbname);
 if ($conn=>connect_error){
 	die("Connection failed: ".$conn->connect_error);
 	}
-$sql = "INSERT INTO sensor_data (id, data)
+$sql = "INSERT INTO sensor_data (id, data) //inser command here will write into the data base 
 VALUES('','$data')";
 
 if($conn->query($sql) === TRUE){
