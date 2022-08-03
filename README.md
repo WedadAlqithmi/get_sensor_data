@@ -115,3 +115,40 @@ float voltage= sensorValue * (5.0 / 1023.0);
 Serial.println(voltage)
 }
 ```
+
+
+
+php serial 
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1><a href="index.php?status=1">ON</a></h1>
+    <h1> <a href="index.php?status=2">off</a></h1>
+
+   <?php
+    //calling php serial class 
+    require_once 'php_serial.class.php';
+    $serial=new phpSerial();
+    $serial->deviceSet('/dev/ttyACM2');
+    $serial->confBaudRate(9600);
+    $serial->confParity("none");
+    $serial->confCharacterLength(8);
+    $serial->confStopBits(1);
+    $serial->confFlowControl("none");
+    $serial->deviceOpen();
+
+    if($_GET['status']){
+        $serial->sendMessage($_GET['status']);
+        $read=$serial->readPort();
+	 var_dump($read);
+        echo $read;
+    }
+   ?>
+</body>
+</html>
+```
